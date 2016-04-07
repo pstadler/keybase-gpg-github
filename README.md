@@ -81,3 +81,43 @@ $ rm public.key secret.key
 $ $EDITOR ~/.gnupg/gpg.conf
 # Add line: default-key E870EE00
 ```
+
+## Optional: Don't ask for password every time
+
+Install the needed software:
+
+```console
+$ brew install gpg-agent pinentry-mac
+```
+
+Enable agent use:
+
+```console
+$ vim ~/.gnupg/gpg.conf
+# uncomment the use-agent line
+```
+
+Setup agent:
+
+```console
+$ vim ~/.gnupg/gpg-agent.conf
+# Paste these lines:
+use-standard-socket
+pinentry-program /usr/local/bin/pinentry-mac
+```
+
+Link pinentry and agent together:
+
+```console
+$ vim ~/.profile # or other file that is sourced every time
+# Paste these lines:
+if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
+  source ~/.gnupg/.gpg-agent-info
+  export GPG_AGENT_INFO
+else
+  eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+fi
+```
+
+Now `git commit -S`, it will ask your password and you can save it to OSX
+keychain.
