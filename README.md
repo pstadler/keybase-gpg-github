@@ -66,13 +66,8 @@ $ keybase pgp export
 # user: keybase.io/ps <ps@keybase.io>
 # 4096-bit RSA key, ID 31DBBB1F6949DA68, created 2014-03-26
 
-$ keybase pgp export -q CB86A866E870EE00 -o public.key
-$ keybase pgp export -q CB86A866E870EE00 --secret -o secret.key
-
-$ gpg --import public.key
-$ gpg --allow-secret-key-import --import secret.key
-
-$ rm public.key secret.key
+$ keybase pgp export -q CB86A866E870EE00 | gpg --import
+$ keybase pgp export -q CB86A866E870EE00 --secret | gpg --allow-secret-key-import --import
 ```
 
 ## Optional: Set as default GPG key
