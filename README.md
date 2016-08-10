@@ -88,14 +88,14 @@ $ brew install gpg-agent pinentry-mac
 Enable agent use:
 
 ```console
-$ vim ~/.gnupg/gpg.conf
+$ $EDITOR ~/.gnupg/gpg.conf
 # uncomment the use-agent line
 ```
 
 Setup agent:
 
 ```console
-$ vim ~/.gnupg/gpg-agent.conf
+$ $EDITOR ~/.gnupg/gpg-agent.conf
 # Paste these lines:
 use-standard-socket
 pinentry-program /usr/local/bin/pinentry-mac
@@ -104,7 +104,7 @@ pinentry-program /usr/local/bin/pinentry-mac
 Link pinentry and agent together:
 
 ```console
-$ vim ~/.profile # or other file that is sourced every time
+$ $EDITOR ~/.profile # or other file that is sourced every time
 # Paste these lines:
 if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
   source ~/.gnupg/.gpg-agent-info
