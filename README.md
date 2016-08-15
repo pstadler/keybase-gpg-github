@@ -4,6 +4,8 @@ This is a step-by-step guide on how to create a GPG key on [keybase.io](https://
 
 Although this guide was written for OS X, most commands should work in other operating systems as well.
 
+[Discussion](https://news.ycombinator.com/item?id=12289481) on Hacker News.
+
 ## Requirements
 
 ```sh
