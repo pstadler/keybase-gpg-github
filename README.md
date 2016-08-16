@@ -83,20 +83,20 @@ $ $EDITOR ~/.gnupg/gpg.conf
 
 Install the needed software:
 
-```console
+```sh
 $ brew install gpg-agent pinentry-mac
 ```
 
 Enable agent use:
 
-```console
+```sh
 $ $EDITOR ~/.gnupg/gpg.conf
 # uncomment the use-agent line
 ```
 
 Setup agent:
 
-```console
+```sh
 $ $EDITOR ~/.gnupg/gpg-agent.conf
 # Paste these lines:
 use-standard-socket
@@ -105,7 +105,7 @@ pinentry-program /usr/local/bin/pinentry-mac
 
 Link pinentry and agent together:
 
-```console
+```sh
 $ $EDITOR ~/.profile # or other file that is sourced every time
 # Paste these lines:
 if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
