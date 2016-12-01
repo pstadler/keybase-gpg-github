@@ -79,6 +79,13 @@ $ $EDITOR ~/.gnupg/gpg.conf
 # Add line: default-key E870EE00
 ```
 
+## Optional: Disable TTY 
+If you have problems with making autosigned commits from IDE or other software add no-tty config
+```sh
+$ $EDITOR ~/.gnupg/gpg.conf
+# Add line: no-tty
+```
+
 ## Optional: Don't ask for password every time
 
 Install the needed software:
