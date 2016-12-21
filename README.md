@@ -88,7 +88,7 @@ $ $EDITOR ~/.gnupg/gpg.conf
 
 ## Optional: Setting up TTY  
 Depending on your personal setup, you might need to define the tty for gpg
-whenever your passphrase is prompted. Otherwise, you might an `Inappropriate
+whenever your passphrase is prompted. Otherwise, you might encounter an `Inappropriate
 ioctl for device` error.
 ```sh
 $ $EDITOR ~/.profile # or other file that is sourced every time
