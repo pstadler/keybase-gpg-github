@@ -86,6 +86,17 @@ $ $EDITOR ~/.gnupg/gpg.conf
 # Add line: no-tty
 ```
 
+## Optional: Setting up TTY  
+Depending on your personal setup, you might need to define the tty for gpg
+whenever your passphrase is prompted. Otherwise, you might encounter an `Inappropriate
+ioctl for device` error.
+```sh
+$ $EDITOR ~/.profile # or other file that is sourced every time
+# Paste these lines
+GPG_TTY=$(tty)
+export GPG_TTY
+```
+
 ## Optional: Don't ask for password every time
 
 Install the needed software:
