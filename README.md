@@ -79,6 +79,13 @@ $ $EDITOR ~/.gnupg/gpg.conf
 # Add line: default-key E870EE00
 ```
 
+## Optional: Fix for Git UIs
+
+If you use a UI such as Git Tower or Github Desktop, you may need to configure git to point to the specific gpg executable:
+```sh
+git config --global gpg.program $(which gpg)
+```
+
 ## Optional: Disable TTY 
 If you have problems with making autosigned commits from IDE or other software add no-tty config
 ```sh
