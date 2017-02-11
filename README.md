@@ -1,4 +1,4 @@
-# Setup Keybase.io <sub>(optional)</sub>, GPG & Git to sign commits on GitHub
+# Setup Keybase.io, GPG & Git to sign commits on GitHub
 
 This is a step-by-step guide on how to create a GPG key on [keybase.io](https://keybase.io), adding it to a local GPG setup and use it with Git and GitHub.
 
