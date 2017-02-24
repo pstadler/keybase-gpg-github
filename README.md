@@ -2,7 +2,7 @@
 
 This is a step-by-step guide on how to create a GPG key on [keybase.io](https://keybase.io), adding it to a local GPG setup and use it with Git and GitHub.
 
-Although this guide was written for OS X, most commands should work in other operating systems as well.
+Although this guide was written for macOS, most commands should work in other operating systems as well.
 
 [Discussion](https://news.ycombinator.com/item?id=12289481) on Hacker News.
 
@@ -110,7 +110,9 @@ GPG_TTY=$(tty)
 export GPG_TTY
 ```
 
-## Optional: Don't ask for password every time
+## Optional: In case you're prompted to enter the password every time
+
+> Some people found that this works out of the box w/o following these steps.
 
 Install the needed software:
 
@@ -149,5 +151,5 @@ else
 fi
 ```
 
-Now `git commit -S`, it will ask your password and you can save it to OSX
+Now `git commit -S`, it will ask your password and you can save it to macOS
 keychain.
