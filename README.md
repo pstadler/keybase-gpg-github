@@ -82,7 +82,8 @@ $ keybase pgp export -q CB86A866E870EE00 --secret | gpg --allow-secret-key-impor
 
 ```sh
 $ $EDITOR ~/.gnupg/gpg.conf
-# Add line: default-key E870EE00
+# Add line:
+default-key E870EE00
 ```
 
 ## Optional: Fix for Git UIs
@@ -96,7 +97,8 @@ git config --global gpg.program $(which gpg)
 If you have problems with making autosigned commits from IDE or other software add no-tty config
 ```sh
 $ $EDITOR ~/.gnupg/gpg.conf
-# Add line: no-tty
+# Add line:
+no-tty
 ```
 
 ## Optional: Setting up TTY  
@@ -124,7 +126,8 @@ Enable agent use:
 
 ```sh
 $ $EDITOR ~/.gnupg/gpg.conf
-# uncomment the use-agent line
+# Add or uncomment line:
+use-agent
 ```
 
 Setup agent:
