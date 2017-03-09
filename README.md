@@ -1,4 +1,4 @@
-# Setup Keybase.io, GPG & Git to sign commits on GitHub
+# Set up Keybase.io, GPG & Git to sign commits on GitHub
 
 This is a step-by-step guide on how to create a GPG key on [keybase.io](https://keybase.io), adding it to a local GPG setup and use it with Git and GitHub.
 
@@ -130,7 +130,7 @@ $ $EDITOR ~/.gnupg/gpg.conf
 use-agent
 ```
 
-Setup agent:
+Set up the agent:
 
 ```sh
 $ $EDITOR ~/.gnupg/gpg-agent.conf
