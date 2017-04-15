@@ -116,6 +116,8 @@ export GPG_TTY
 
 > Some people found that this works out of the box w/o following these steps.
 
+### Method 1 - Homebrew
+
 Install the needed software:
 
 ```sh
@@ -156,3 +158,35 @@ fi
 
 Now `git commit -S`, it will ask your password and you can save it to macOS
 keychain.
+
+![pinentry](img/pinentry.png)
+
+### Method 2 - GPG Suite
+
+Some people find that pinentry installed with brew does not allow the password to be saved to macOS's keychain.
+
+If you do not see "Save in Keychain" after following Method 1, first uninstall the versions of pinentry-mac and gpg-agent installed with brew:
+
+```sh
+$ brew uninstall gpg-agent pinentry-mac
+```
+
+Now install the GPG Suite versions, available from [gpgtools.org](https://gpgtools.org/#gpgsuite)
+
+Once installed, open Spotlight and search for "GPGPreferences", or open system preferences and select "GPGPreferences"
+
+Select the Default Key if it is not already selected, and ensure "Store in OS X Keychain" is checked:
+
+![gpg preferences](img/gpg-preferences.png)
+
+The config files edited are the same as in Method 1, however `gpg-agent.conf` is different:
+
+Set up the agent:
+
+```sh
+$ $EDITOR ~/.gnupg/gpg-agent.conf
+# GPG Suite should pre-populate with something similar to the following:
+use-standard-socket
+default-cache-ttl 600
+max-cache-ttl 7200
+```
