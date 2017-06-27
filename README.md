@@ -59,6 +59,7 @@ $ git config --global commit.gpgsign true
 $ open https://github.com/settings/keys
 # Click "New GPG key"
 
+# We can then use `export` with the `-q` or query flag to match on our key (the first 16 characters should do..) 
 $ keybase pgp export -q CB86A866E870EE00 | pbcopy # copy public key to clipboard
 # Paste key, save
 ```
