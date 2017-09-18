@@ -43,7 +43,7 @@ $ keybase pgp gen --multi
 ## Set up Git to sign all commits
 
 ```sh
-$ gpg --list-secret-keys
+$ gpg --list-secret-keys --keyid-format LONG
 # /Users/pstadler/.gnupg/secring.gpg
 # ----------------------------------
 # sec   4096R/E870EE00 2016-04-06 [expires: 2032-04-02]
