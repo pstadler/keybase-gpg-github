@@ -118,7 +118,7 @@ export GPG_TTY
 
 > Some people found that this works out of the box w/o following these steps.
 
-### Method 1 - Homebrew
+### Method 1 - gpg-agent + pinentry-mac
 
 Install the needed software:
 
@@ -173,7 +173,11 @@ If you do not see "Save in Keychain" after following Method 1, first uninstall t
 $ brew uninstall gpg-agent pinentry-mac
 ```
 
-Now install the GPG Suite versions, available from [gpgtools.org](https://gpgtools.org/#gpgsuite)
+Now install the GPG Suite versions, available from [gpgtools.org](https://gpgtools.org/#gpgsuite), or from brew by running:
+
+```sh
+$ brew cask install gpg-suite
+```
 
 Once installed, open Spotlight and search for "GPGPreferences", or open system preferences and select "GPGPreferences"
 
