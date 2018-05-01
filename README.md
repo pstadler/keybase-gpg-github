@@ -4,7 +4,7 @@ This is a step-by-step guide on how to create a GPG key on [keybase.io](https://
 
 Although this guide was written for macOS, most commands should work in other operating systems as well.
 
-[Discussion](https://news.ycombinator.com/item?id=12289481) on Hacker News.
+There's a [video](https://www.youtube.com/watch?v=4V-7KnhcrbY) published by [Timothy Miller](https://github.com/tjacobdesign) explaining some parts of this guide. [Discussion](https://news.ycombinator.com/item?id=12289481) on Hacker News. 
 
 > **Note**: If you **don't** want to use Keybase.io, follow [this guide][1] instead.
 > For manually transferring keys to different hosts, check out this [answer on Stack Overflow][2].
