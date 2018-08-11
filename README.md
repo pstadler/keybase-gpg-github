@@ -80,6 +80,18 @@ $ keybase pgp export -q CB86A866E870EE00 | gpg --import
 $ keybase pgp export -q CB86A866E870EE00 --secret | gpg --allow-secret-key-import --import
 ```
 
+## Troubleshooting: `gpg failed to sign the data`
+
+If you cannot sign a commit after running through the above steps, and have an error like:
+
+```sh
+$ git commit -m "My commit"
+# error: gpg failed to sign the data
+# fatal: failed to write commit object
+```
+
+You can run `echo "test" | gpg --clearsign` to find the underlying issue.
+
 ## Optional: Set as default GPG key
 
 ```sh
