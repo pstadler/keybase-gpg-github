@@ -92,6 +92,8 @@ $ git commit -m "My commit"
 
 You can run `echo "test" | gpg --clearsign` to find the underlying issue.
 
+If the above succeeds without error, then there is likely a configuration problem that is preventing git from selecting or using the secret key.  Confirm that your gitconfig `user.email` matches the secret key that you are using for signing.
+
 ## Optional: Set as default GPG key
 
 ```sh
