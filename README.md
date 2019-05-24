@@ -134,42 +134,18 @@ export GPG_TTY
 
 ### Method 1 - gpg-agent + pinentry-mac
 
-Install the needed software:
+Install pinentry-mac:
 
 ```sh
-$ brew install gpg-agent pinentry-mac
-```
-
-Enable agent use:
-
-```sh
-$ $EDITOR ~/.gnupg/gpg.conf
-# Add or uncomment line:
-use-agent
+$ brew install pinentry-mac
 ```
 
 Set up the agent:
 
 ```sh
 $ $EDITOR ~/.gnupg/gpg-agent.conf
-# Paste these lines:
-use-standard-socket
+# Paste this line:
 pinentry-program /usr/local/bin/pinentry-mac
-```
-
-Link pinentry and agent together:
-
-```sh
-$ $EDITOR ~/.profile # or other file that is sourced every time
-# Paste these lines:
-if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
-  source ~/.gnupg/.gpg-agent-info
-  export GPG_AGENT_INFO
-  GPG_TTY=$(tty)
-  export GPG_TTY
-else
-  eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
-fi
 ```
 
 Now `git commit -S`, it will ask your password and you can save it to macOS
@@ -181,10 +157,10 @@ keychain.
 
 Some people find that pinentry installed with brew does not allow the password to be saved to macOS's keychain.
 
-If you do not see "Save in Keychain" after following Method 1, first uninstall the versions of pinentry-mac and gpg-agent installed with brew:
+If you do not see "Save in Keychain" after following Method 1, first uninstall the version of pinentry-mac installed with brew:
 
 ```sh
-$ brew uninstall gpg-agent pinentry-mac
+$ brew uninstall pinentry-mac
 ```
 
 Now install the GPG Suite versions, available from [gpgtools.org](https://gpgtools.org/#gpgsuite), or from brew by running:
@@ -199,14 +175,13 @@ Select the Default Key if it is not already selected, and ensure "Store in OS X 
 
 ![gpg preferences](img/gpg-preferences.png)
 
-The config files edited are the same as in Method 1, however `gpg-agent.conf` is different:
+The `gpg-agent.conf` is different from Method 1:
 
 Set up the agent:
 
 ```sh
 $ $EDITOR ~/.gnupg/gpg-agent.conf
 # GPG Suite should pre-populate with something similar to the following:
-use-standard-socket
 default-cache-ttl 600
 max-cache-ttl 7200
 ```
