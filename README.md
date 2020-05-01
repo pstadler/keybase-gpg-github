@@ -80,6 +80,29 @@ $ keybase pgp export -q CB86A866E870EE00 | gpg --import
 $ keybase pgp export -q CB86A866E870EE00 --secret | gpg --allow-secret-key-import --import
 ```
 
+After importing you probably want to locally trust your own key, otherwise you will see
+`gpg: WARNING: This key is not certified with a trusted signature!` when running `git log --show-signature`.
+
+```
+$ gpg --edit-key CB86A866E870EE00
+gpg> trust
+
+Please decide how far you trust this user to correctly verify other users' keys
+(by looking at passports, checking fingerprints from different sources, etc.)
+
+  1 = I don't know or won't say
+  2 = I do NOT trust
+  3 = I trust marginally
+  4 = I trust fully
+  5 = I trust ultimately
+  m = back to the main menu
+
+Your decision? 5
+Do you really want to set this key to ultimate trust? (y/N) y
+
+gpg> quit
+```
+
 ## Troubleshooting: `gpg failed to sign the data`
 
 If you cannot sign a commit after running through the above steps, and have an error like:
