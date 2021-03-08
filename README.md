@@ -16,7 +16,7 @@ There's a [video](https://www.youtube.com/watch?v=4V-7KnhcrbY) published by [Tim
 
 ```sh
 $ brew install gpg
-$ brew cask install keybase
+$ brew install --cask keybase
 ```
 
 You should already have an account with Keybase and be signed in locally using `$ keybase login`. In case you need to set up a new device first, follow the instructions provided by the keybase command during login.
@@ -189,7 +189,7 @@ $ brew uninstall pinentry-mac
 Now install the GPG Suite versions, available from [gpgtools.org](https://gpgtools.org/#gpgsuite), or from brew by running:
 
 ```sh
-$ brew cask install gpg-suite
+$ brew install --cask gpg-suite
 ```
 
 Once installed, open Spotlight and search for "GPGPreferences", or open system preferences and select "GPGPreferences"
