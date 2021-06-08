@@ -117,6 +117,13 @@ You can run `echo "test" | gpg --clearsign` to find the underlying issue.
 
 If the above succeeds without error, then there is likely a configuration problem that is preventing git from selecting or using the secret key.  Confirm that your gitconfig `user.email` matches the secret key that you are using for signing.
 
+Another solution is set up Git to use GPG program on Windows
+```sh
+$ git config --global user.signingkey E870EE00
+$ git config --global commit.gpgsign true
+$ git config --global gpg.program "C:\Program Files (x86)\GnuPG\bin\gpg.exe"
+```
+
 ## Optional: Set as default GPG key
 
 ```sh
