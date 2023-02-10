@@ -199,7 +199,7 @@ Now install the GPG Suite versions, available from [gpgtools.org](https://gpgtoo
 $ brew install --cask gpg-suite
 ```
 
-Once installed, open Spotlight and search for "GPGPreferences", or open system preferences and select "GPGPreferences"
+Once installed, open Spotlight and search for "GPG Suite", or open system preferences and select "GPG Suite"
 
 Select the Default Key if it is not already selected, and ensure "Store in OS X Keychain" is checked:
 
@@ -214,4 +214,39 @@ $ $EDITOR ~/.gnupg/gpg-agent.conf
 # GPG Suite should pre-populate with something similar to the following:
 default-cache-ttl 600
 max-cache-ttl 7200
+```
+
+
+### Testing without a Git Commit
+
+While a full end-to-end test by committing something to git will confirm for sure if things are working, a quick thing you can check is:
+
+```
+echo "test" | gpg --clearsign
+```
+
+This will output something like this if everything goes well:
+
+```
+$ echo "test" | gpg --clearsign
+gpg: WARNING: server 'gpg-agent' is older than us (2.2.40 < 2.4.0)
+gpg: Note: Outdated servers may lack important security fixes.
+gpg: Note: Use the command "gpgconf --kill all" to restart them.
+gpg: using "9DAC53FB18AB8C5DF0E2AA5B330CB62AE334C5E2" as default secret key for signing
+gpg: problem with fast path key listing: IPC parameter error - ignored
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+test
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAEBCAAdFiEEmpcZZDDypeoq25Aer4d9fatgnzQFAmPmbXEACgkQr4d9fatg
+nzQ/RAf9Elo6RUbb1xWdyPVHqS6Eq67eWmbJ62WriI+2ldMjj8lZp4XtcZ0KzXnO
+0U4moVhZyQqBQ1syDC8UNXsTI7pzbRuZ1dzs5tjo+6UuqGfzpgurvw//3L/LxujJ
+5asFq//sDNLCHFUAFDbmuWqfcMqpp/KqtaJr8EuCSb/3HSy4J8lMNGyQ4wmpQs5U
+Qr5IPLq07NQrOQC3d4vXOmWqY9EZYeSbf0QWCMiErHLxm/jQY+TP88lNre99GmED
+4mAD2+I5wd33MizbjfTSH/RAeT5MdLwiBzc6kVjxu4BWusPmdUgLs7vPuP3qeqMQ
+q9VnL6mMsaFm0rKnID/MoOPtaghgSA==
+=1T8z
+-----END PGP SIGNATURE-----
 ```
