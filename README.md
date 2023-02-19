@@ -178,6 +178,14 @@ $ $EDITOR ~/.gnupg/gpg-agent.conf
 pinentry-program /usr/local/bin/pinentry-mac
 ```
 
+It may be needed to restart the agent : 
+
+```sh
+# it will start back on the next use
+$ gpgconf --kill gpg-agent
+```
+
+
 Now `git commit -S`, it will ask your password and you can save it to macOS
 keychain.
 
