@@ -174,7 +174,9 @@ Set up the agent:
 
 ```sh
 $ $EDITOR ~/.gnupg/gpg-agent.conf
-# Paste this line:
+# Paste this line for Apple silicon:
+pinentry-program /opt/homebrew/bin/pinentry-mac
+# For Intel-based Macs, paste this line instead:
 pinentry-program /usr/local/bin/pinentry-mac
 ```
 
